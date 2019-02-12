@@ -1,0 +1,124 @@
+#:import cor kivy.utils.get_color_from_hex
+
+<Pesquisar>
+  size_hint: 1, 1
+  canvas.before:
+    Color:
+      rgba:cor("#061422")
+    Rectangle:
+      pos: dp(.1) ,dp(14)
+      size: dp(10000) ,dp(651)
+
+  TextInput:
+    id: retornos
+    size_hint: .98, .4
+    pos_hint:{"x": .01, "y": .550}
+    background_color: cor("#4c7fb4")
+    readonly : True
+  #  foreground_color: cor("#4c7fb4")
+
+  Label:
+
+    id: status_campo_vazio
+    size_hint: .96, .05
+    pos_hint:{"x": .02, "y": .40}
+    background_color: cor("#4c7fb4")
+
+  TextInput:
+    id: consultar
+    multiline: False
+    size_hint: .96, .05
+    pos_hint:{"x": .02, "y": .45}
+    background_color: cor("#4c7fb4")
+    #foreground_color: cor("#4c7fb4")
+    multiline: False
+
+  Button:
+    size_hint: .7, .08
+    on_press: root.cmd_line()
+    pos_hint:{"center_x":.5, "center_y": .35}
+    #background_color:  0 ,.2, .1, 2
+    background_color: cor("#ff6c0e")
+    background_normal: ""
+    opacity: 0.7
+    text:"instruçao"
+
+  Button:
+    size_hint: .7, .08
+    on_press: root.voltar()
+    pos_hint:{"center_x":.5, "center_y": .20}
+    #background_color:  0 ,.2, .1, 2
+    background_color: cor("#ff6c0e")
+    background_normal: ""
+    opacity: 0.7
+    text:"voltar"
+
+
+<ControleInicial>:
+  padding:36
+  size_hint: 1, 1
+  canvas.before:
+    Color:
+      rgba:cor("#061422")
+    Rectangle:
+      pos: dp(.1) ,dp(14)
+      size: dp(10000) ,dp(656)
+  orientation: "vertical"
+ # cols: 2
+
+
+  Button:
+    text:"Pesquisar"
+    on_press: root.pesquisar()
+    background_color: cor("#061422")
+    background_normal: ""
+
+
+  Button:
+    text:"Desconectar"
+    opacity: 0.4
+    on_press: root.sair()
+    background_color: cor("#061422")
+    background_normal: ""
+
+#---------------------------
+<TelaInicial>:
+  size_hint: 1, 1
+  canvas.before:
+    Color:
+      rgba:cor("#061422")
+    Rectangle:
+      pos: dp(.1) ,dp( 30)
+      size: dp(10000) ,dp(640)
+
+
+  TextInput:
+    id: entrada
+    multiline: False
+    size_hint: .96, .05
+    pos_hint:{"x": .02, "y": .65}
+   # write_tab: False
+    background_color: cor("#4c7fb4")
+  #  foreground_color: cor("#4c7fb4")
+
+  Button:
+    size_hint: .7, .08
+    on_press: root.endereco()
+    pos_hint:{"center_x":.5, "center_y": .57}
+    #background_color:  0 ,.2, .1, 2
+    background_color: cor("#ff6c0e")
+    background_normal: ""
+    opacity: 0.7
+    text:"entrar"
+
+  Label:
+    text:"Bem-Vindo"
+    id: status
+    size_hint: .96, .05
+    pos_hint:{"x": .02, "y": .40}
+    background_color: cor("#4c7fb4")
+
+
+TelaInicial:
+
+
